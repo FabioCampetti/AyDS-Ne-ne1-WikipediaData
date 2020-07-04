@@ -9,7 +9,7 @@ class WikiService(
 
     override fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse {
         val callResponse = getWikiMovieDescriptionFromService(movieTitle, movieYear)
-        return wikiMovieDescriptionResolver.getMovieDescriptionFromExternalData(movieTitle, movieYear, callResponse?.body())
+        return wikiMovieDescriptionResolver.getMovieDescriptionFromExternalData(movieTitle,  callResponse?.body())
     }
 
     private fun getWikiMovieDescriptionFromService(movieTitle: String, movieYear: String): Response<String>? {
