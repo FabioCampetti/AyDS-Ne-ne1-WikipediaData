@@ -1,8 +1,7 @@
 package ayds.nene1.wikipedia.external
 
-import ayds.nene.movieinfo.home.model.entities.OmdbMovie
-import ayds.nene.movieinfo.moredetails.model.entities.MovieDescription
+import ayds.nene1.wikipedia.external.wikidb.MovieDescriptionResponse
 
 interface ExternalService {
-    fun getMovieDescription(movie: OmdbMovie): MovieDescription
+    fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse
 }

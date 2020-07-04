@@ -1,23 +1,21 @@
 package ayds.nene1.wikipedia.external.wikidb
 
-import ayds.nene.movieinfo.home.model.entities.OmdbMovie
-import ayds.nene.movieinfo.moredetails.model.entities.EmptyMovieDescription
-import ayds.nene.movieinfo.moredetails.model.entities.MovieDescription
+
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
-internal interface WikiResponseToWikiMovieDescriptionResolver {
-    fun getMovieDescriptionFromExternalData(movie: OmdbMovie, body: String?): MovieDescription
+interface WikiResponseToWikiMovieDescriptionResolver {
+    fun getMovieDescriptionFromExternalData(movieTitle: String, movieYear: String, body: String?): MovieDescriptionResponse
 }
 
 
 class WikiResponseToWikiMovieDescriptionResolverImpl:
     WikiResponseToWikiMovieDescriptionResolver {
 
-    override fun getMovieDescriptionFromExternalData(movie: OmdbMovie, body: String?): MovieDescription{
+    override fun getMovieDescriptionFromExternalData(movieTitle: String, movieYear: String, body: String?): MovieDescriptionResponse{
         val text = getMovieText(body)
-        return if(text == "") EmptyMovieDescription else MovieDescription(movie,text,Constants.PATH_LOGO_WIKIPEDIA)
+        return if(text == "") EmptyMovieDescriptionResponse else MovieDescriptionResponse(movieTitle,movieYear, text,Constants.PATH_LOGO_WIKIPEDIA)
     }
 
     private fun getMovieText(body: String?): String {
