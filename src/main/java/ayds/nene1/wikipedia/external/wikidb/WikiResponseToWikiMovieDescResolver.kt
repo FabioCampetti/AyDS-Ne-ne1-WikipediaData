@@ -11,6 +11,7 @@ internal interface WikiResponseToWikiMovieDescriptionResolver {
     fun getMovieDescriptionFromExternalData(movie: OmdbMovie, body: String?): MovieDescription
 }
 
+
 class WikiResponseToWikiMovieDescriptionResolverImpl:
     WikiResponseToWikiMovieDescriptionResolver {
 
