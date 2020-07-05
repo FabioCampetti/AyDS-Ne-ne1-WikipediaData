@@ -15,7 +15,7 @@ class WikiResponseToWikiMovieDescriptionResolverImpl:
 
     override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): MovieDescriptionResponse{
         val text = getMovieText(body)
-        return if(text == "") EmptyMovieDescriptionResponse else MovieDescriptionResponse(movieTitle, text,Constants.PATH_LOGO_WIKIPEDIA)
+        return if(text == "") EmptyMovieDescriptionResponse else MovieDescriptionResponse(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA, Constants.WIKIPEDIA)
     }
 
     private fun getMovieText(body: String?): String {
