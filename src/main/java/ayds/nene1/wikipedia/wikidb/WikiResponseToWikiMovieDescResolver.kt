@@ -1,4 +1,4 @@
-package ayds.nene1.wikipedia.external.wikidb
+package ayds.nene1.wikipedia.wikidb
 
 
 import com.google.gson.Gson

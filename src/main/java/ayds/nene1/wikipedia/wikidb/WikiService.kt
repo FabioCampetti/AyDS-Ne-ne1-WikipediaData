@@ -1,5 +1,6 @@
-package ayds.nene1.wikipedia.external.wikidb
-import ayds.nene1.wikipedia.external.ExternalService
+package ayds.nene1.wikipedia.wikidb
+
+import ayds.nene1.wikipedia.ExternalService
 import retrofit2.Response
 
 class WikiService(
