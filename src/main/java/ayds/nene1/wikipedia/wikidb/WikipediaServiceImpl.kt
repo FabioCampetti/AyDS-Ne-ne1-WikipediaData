@@ -3,7 +3,7 @@ package ayds.nene1.wikipedia.wikidb
 import ayds.nene1.wikipedia.WikipediaService
 import retrofit2.Response
 
-class WikipediaServiceImpl(
+internal class WikipediaServiceImpl(
     private val wikiAPI: WikipediaAPI,
     private val wikiMovieDescriptionResolver: WikiResponseToWikiMovieDescriptionResolver
 ) : WikipediaService {
