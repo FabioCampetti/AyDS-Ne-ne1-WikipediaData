@@ -1,4 +1,4 @@
-package ayds.nene1.wikipedia.wikidb
+package ayds.nene1.wikipedia.wikiSubmodule
 
 import retrofit2.Call
 import retrofit2.http.GET

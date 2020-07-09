@@ -1,4 +1,4 @@
-package ayds.nene1.wikipedia.wikidb
+package ayds.nene1.wikipedia.wikiSubmodule
 
 import com.google.gson.Gson
 import com.google.gson.JsonElement
