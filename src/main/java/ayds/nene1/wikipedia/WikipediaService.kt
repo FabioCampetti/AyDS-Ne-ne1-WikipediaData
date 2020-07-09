@@ -2,6 +2,6 @@ package ayds.nene1.wikipedia
 
 import ayds.nene1.wikipedia.wikidb.MovieDescriptionResponse
 
-interface ExternalService {
+interface WikipediaService {
     fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse
 }

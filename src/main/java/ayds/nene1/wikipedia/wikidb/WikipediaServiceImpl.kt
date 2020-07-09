@@ -1,12 +1,12 @@
 package ayds.nene1.wikipedia.wikidb
 
-import ayds.nene1.wikipedia.ExternalService
+import ayds.nene1.wikipedia.WikipediaService
 import retrofit2.Response
 
-class WikiService(
+class WikipediaServiceImpl(
     private val wikiAPI: WikipediaAPI,
     private val wikiMovieDescriptionResolver: WikiResponseToWikiMovieDescriptionResolver
-) : ExternalService {
+) : WikipediaService {
 
     override fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse {
         val callResponse = getWikiMovieDescriptionFromService(movieTitle, movieYear)

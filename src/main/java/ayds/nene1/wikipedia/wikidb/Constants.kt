@@ -10,6 +10,5 @@ class Constants {
         const val SNIPPET = "snippet"
         const val PAGE_ID = "pageid"
         const val VIEW_ARTICLE = ">View Article</a>"
-        const val WIKIPEDIA = "Wikipedia"
     }
 }
