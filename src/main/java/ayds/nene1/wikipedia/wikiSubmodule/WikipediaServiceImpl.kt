@@ -1,4 +1,4 @@
-package ayds.nene1.wikipedia.wikidb
+package ayds.nene1.wikipedia.wikiSubmodule
 
 import ayds.nene1.wikipedia.WikipediaService
 import retrofit2.Response

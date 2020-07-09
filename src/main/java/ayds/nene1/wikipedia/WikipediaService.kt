@@ -1,9 +1,9 @@
 package ayds.nene1.wikipedia
 
-import ayds.nene1.wikipedia.wikidb.MovieDescriptionResponse
-import ayds.nene1.wikipedia.wikidb.WikiResponseToWikiMovieDescriptionResolver
-import ayds.nene1.wikipedia.wikidb.WikipediaAPI
-import ayds.nene1.wikipedia.wikidb.WikipediaServiceImpl
+import ayds.nene1.wikipedia.wikiSubmodule.MovieDescriptionResponse
+import ayds.nene1.wikipedia.wikiSubmodule.WikiResponseToWikiMovieDescriptionResolver
+import ayds.nene1.wikipedia.wikiSubmodule.WikipediaAPI
+import ayds.nene1.wikipedia.wikiSubmodule.WikipediaServiceImpl
 
 interface WikipediaService {
     fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse

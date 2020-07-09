@@ -1,4 +1,4 @@
-package ayds.nene1.wikipedia.wikidb
+package ayds.nene1.wikipedia.wikiSubmodule
 
 class Constants {
     companion object {
