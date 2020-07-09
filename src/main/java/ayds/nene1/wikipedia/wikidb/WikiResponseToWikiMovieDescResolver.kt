@@ -13,18 +13,18 @@ class WikiResponseToWikiMovieDescriptionResolverImpl:
     WikiResponseToWikiMovieDescriptionResolver {
 
     override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): MovieDescriptionResponse{
-        val text = getMovieText(body)
+        val text =  body?.let{getMovieText(it)}?:""
         return if(text == "") EmptyMovieDescriptionResponse else MovieDescriptionResponse(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA)
     }
 
-    private fun getMovieText(body: String?): String {
+    private fun getMovieText(body: String): String {
         val resultIterator: Iterator<JsonElement> = createResultIterator(body)
         var result = ""
         if (resultIterator.hasNext()) result = createMovieText(resultIterator.next().asJsonObject)
         return result
     }
 
-    private fun createResultIterator(body: String?): Iterator<JsonElement> {
+    private fun createResultIterator(body: String): Iterator<JsonElement> {
         val result: Iterator<JsonElement>
         val gson = Gson()
         val jobj = gson.fromJson(body, JsonObject::class.java)
