@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 interface WikipediaService {
-    fun getMovieDescription(movieTitle: String, movieYear: String): Card
+    fun getCard(movieTitle: String, movieYear: String): Card
 
     companion object{
         private const val URL_WIKIPEDIA = "https://en.wikipedia.org/w/"
