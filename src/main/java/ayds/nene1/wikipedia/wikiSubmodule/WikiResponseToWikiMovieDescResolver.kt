@@ -4,13 +4,12 @@ import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
-interface WikiResponseToWikiMovieDescriptionResolver {
+interface WikiResponseToWikiMovieDescResolver {
     fun getMovieDescriptionFromExternalData(movieTitle: String, body: String?): Card
 }
 
-
-class WikiResponseToWikiMovieDescriptionResolverImpl:
-    WikiResponseToWikiMovieDescriptionResolver {
+class WikiResponseToWikiMovieDescResolverImpl:
+    WikiResponseToWikiMovieDescResolver {
 
     override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): Card{
         val text =  body?.let{getMovieText(it)}?:""

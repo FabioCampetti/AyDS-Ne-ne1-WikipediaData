@@ -5,7 +5,7 @@ import retrofit2.Response
 
 internal class WikipediaServiceImpl(
     private val wikiAPI: WikipediaAPI,
-    private val wikiMovieDescriptionResolver: WikiResponseToWikiMovieDescriptionResolver
+    private val wikiMovieDescriptionResolver: WikiResponseToWikiMovieDescResolver
 ) : WikipediaService {
 
     override fun getMovieDescription(movieTitle: String, movieYear: String): Card {
