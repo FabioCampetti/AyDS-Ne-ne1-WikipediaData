@@ -1,12 +1,9 @@
 package ayds.nene1.wikipedia
 
-import ayds.nene1.wikipedia.wikiSubmodule.MovieDescriptionResponse
-import ayds.nene1.wikipedia.wikiSubmodule.WikiResponseToWikiMovieDescriptionResolver
-import ayds.nene1.wikipedia.wikiSubmodule.WikipediaAPI
-import ayds.nene1.wikipedia.wikiSubmodule.WikipediaServiceImpl
+import ayds.nene1.wikipedia.wikiSubmodule.*
 
 interface WikipediaService {
-    fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse
+    fun getMovieDescription(movieTitle: String, movieYear: String): Card
 
     companion object{
         fun getInstance(wikipediaAPI: WikipediaAPI,

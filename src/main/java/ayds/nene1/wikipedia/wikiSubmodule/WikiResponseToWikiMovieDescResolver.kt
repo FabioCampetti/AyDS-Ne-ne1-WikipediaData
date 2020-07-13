@@ -5,16 +5,16 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
 interface WikiResponseToWikiMovieDescriptionResolver {
-    fun getMovieDescriptionFromExternalData(movieTitle: String, body: String?): MovieDescriptionResponse
+    fun getMovieDescriptionFromExternalData(movieTitle: String, body: String?): Card
 }
 
 
 class WikiResponseToWikiMovieDescriptionResolverImpl:
     WikiResponseToWikiMovieDescriptionResolver {
 
-    override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): MovieDescriptionResponse{
+    override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): Card{
         val text =  body?.let{getMovieText(it)}?:""
-        return if(text == "") EmptyMovieDescriptionResponse else MovieDescriptionResponse(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA)
+        return if(text == "") EmptyCard else Card(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA)
     }
 
     private fun getMovieText(body: String): String {

@@ -1,9 +1,9 @@
 package ayds.nene1.wikipedia.wikiSubmodule
 
-open class MovieDescriptionResponse(
+open class Card(
     var title: String ="",
     var text: String = "",
     var path: String = ""
 )
 
-object EmptyMovieDescriptionResponse: MovieDescriptionResponse()
+object EmptyCard: Card()

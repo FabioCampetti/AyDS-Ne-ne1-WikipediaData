@@ -8,7 +8,7 @@ internal class WikipediaServiceImpl(
     private val wikiMovieDescriptionResolver: WikiResponseToWikiMovieDescriptionResolver
 ) : WikipediaService {
 
-    override fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse {
+    override fun getMovieDescription(movieTitle: String, movieYear: String): Card {
         val callResponse = getWikiMovieDescriptionFromService(movieTitle, movieYear)
         return wikiMovieDescriptionResolver.getMovieDescriptionFromExternalData(movieTitle,  callResponse?.body())
     }
