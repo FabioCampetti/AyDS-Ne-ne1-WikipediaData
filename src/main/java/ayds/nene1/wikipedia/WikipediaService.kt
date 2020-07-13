@@ -17,7 +17,7 @@ interface WikipediaService {
 
         fun getInstance(): WikipediaService =  WikipediaServiceImpl(
                 retrofit.create(WikipediaAPI::class.java),
-                WikiResponseToWikiMovieDescResolverImpl()
+                WikiResponseResolverImpl()
         )
     }
 }

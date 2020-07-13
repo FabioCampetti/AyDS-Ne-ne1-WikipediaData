@@ -4,14 +4,14 @@ import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
-interface WikiResponseToWikiMovieDescResolver {
-    fun getMovieDescriptionFromExternalData(movieTitle: String, body: String?): WikipediaResponse
+interface WikiResponseResolver {
+    fun getWikipediaResponseFromExternalData(movieTitle: String, body: String?): WikipediaResponse
 }
 
-class WikiResponseToWikiMovieDescResolverImpl:
-    WikiResponseToWikiMovieDescResolver {
+class WikiResponseResolverImpl:
+    WikiResponseResolver {
 
-    override fun getMovieDescriptionFromExternalData(movieTitle: String,  body: String?): WikipediaResponse{
+    override fun getWikipediaResponseFromExternalData(movieTitle: String, body: String?): WikipediaResponse{
         val text =  body?.let{getMovieText(it)}?:""
         return if(text == "") EmptyWikipediaResponse else WikipediaResponse(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA)
     }
