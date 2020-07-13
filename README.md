@@ -3,7 +3,7 @@
 ## Interfaz:
 La interfaz a usar se llama ExternalService y el método para obtener la descripción de la película es: 
 
-    fun getMovieDescription(movieTitle: String, movieYear: String): MovieDescriptionResponse
+    fun getCard(movieTitle: String, movieYear: String): Card
    
 Se debe pasar el título de la película, y el año.    
 
