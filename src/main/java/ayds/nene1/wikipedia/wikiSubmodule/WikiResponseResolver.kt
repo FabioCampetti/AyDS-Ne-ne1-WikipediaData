@@ -12,7 +12,7 @@ class WikiResponseResolverImpl:
     WikiResponseResolver {
 
     override fun getWikipediaResponseFromExternalData(movieTitle: String, body: String?): WikipediaResponse{
-        val text =  body?.let{getMovieText(it)}?:""
+        val text = body?.let{getMovieText(it)}?:""
         return if(text == "") EmptyWikipediaResponse else WikipediaResponse(movieTitle, text, Constants.PATH_LOGO_WIKIPEDIA)
     }
 

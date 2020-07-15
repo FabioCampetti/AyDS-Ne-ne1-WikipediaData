@@ -10,7 +10,7 @@ internal class WikipediaServiceImpl(
 
     override fun getWikipediaResponse(movieTitle: String, movieYear: String): WikipediaResponse {
         val callResponse = getWikiResponseFromService(movieTitle, movieYear)
-        return wikiResponseResolver.getWikipediaResponseFromExternalData(movieTitle,  callResponse?.body())
+        return wikiResponseResolver.getWikipediaResponseFromExternalData(movieTitle, callResponse?.body())
     }
 
     private fun getWikiResponseFromService(movieTitle: String, movieYear: String): Response<String>? {
