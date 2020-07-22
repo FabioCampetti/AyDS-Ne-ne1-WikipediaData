@@ -8,6 +8,8 @@ internal class WikipediaServiceImpl(
     private val wikiResponseResolver: WikiResponseResolver
 ) : WikipediaService {
 
+    private val NO_CONNECTION = "No connection to Wikipedia API."
+
     override fun getWikipediaResponse(movieTitle: String, movieYear: String): WikipediaResponse {
         val callResponse = getWikiResponseFromService(movieTitle, movieYear)
         return wikiResponseResolver.getWikipediaResponseFromExternalData(movieTitle, callResponse?.body())
@@ -18,7 +20,7 @@ internal class WikipediaServiceImpl(
         try {
             callResponse = wikiAPI.getTerm(movieTitle + " " + movieYear + Constants.FILM).execute()
         } catch (ex: Exception) {
-            ex.printStackTrace()
+            println(NO_CONNECTION)
         }
         return callResponse
     }
